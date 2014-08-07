@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://pauloreg.com/messages/messages.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Ajax Messages System</title>
+
+    <link href="http://pauloreg.com/messages/css/bootstrap.css" rel="stylesheet">
+    <link href="http://pauloreg.com/messages/css/style.css" rel="stylesheet">
+    <link href="http://pauloreg.com/messages/css/messages.css" rel="stylesheet">
+	<script src="/Ajax Messages System_files/jquery.js" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head><body style="position: relative;">
+
+<div class="container">
+  <div class="row">
+	<div class="greatings">
+    	<!-- <a href="http://pauloreg.com/messages/messages.php?logout=true" class="pull-right" style="margin-top: 15px;">Log Out</a> -->
+    	<p class="pull-left">
+        	<img src="/Ajax Messages System_files/anna.jpg" width="50" height="50">
+			<%= current_user.email %>        </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="content-wrap margin-reset">
+         <!-- messages -->
+        <div class="messages-box">
+            
+<div class="borders">
+<div class="col-md-4 listWrapper">
+    <div class="innerBox" id="contacts-search">
+        <form autocomplete="off" class="form-inline margin-none">
+            <div class="input-group input-group-sm">
+                <input class="form-control" id="contacts-search-input" placeholder="Filter Contacts ..." type="text">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="bg-gray strong border-top border-bottom innerBox-half text-center">Contacts (<%= @users.count%>)</div>
+    
+    <ul class="list-unstyled p0" id="messages-stack-list" tabindex="5000" style="overflow: hidden; outline: none; cursor: -webkit-grab;">
+    <% @users.each do| user |%>
+
+    <li class="prepare-message border-bottom" id="<%= user.id %>">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="http://pauloreg.com/messages/messages.php#">
+                    <img src="/Ajax Messages System_files/mike.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong"><%= user.email %></span></div>
+                <% unreaded=current_user.messages.are_from(user).are_to(current_user).unreaded.count %>
+                <% if unreaded!=0 %> 
+                    <div id="unreader-counter<%= user.id %>">Unread <span class="label label-warning" id="unreader-count-<%= user.id %>"><%= unreaded %></span></div>
+                <% end %>
+            </div>
+        </div>
+    </li>
+        
+    <% end%>
+</ul>    
+</div>
+
+<div class="col-md-8 messageWrapper">
+    <div id="loadingDiv" style="display: none;"></div>
+    <div id="text-messages-request" tabindex="5001" style="overflow: hidden; outline: none; cursor: -webkit-grab;">
+ 
+
+       <p class="innerBox">Read your messages by selecting a contact on the left</p>
+
+                
+
+
+            </div>
+        </div>
+    </div>
+
+</div>        </div>
+        <p style="padding-top: 5px; color: #aaa;">Hint: Type [unread] to filter unread messages</p>
+        <!-- // messages -->
+    </div>
+  </div><!-- // row -->
+</div><!-- // container -->
+    
+<script src="/Ajax Messages System_files/bootstrap.js" type="text/javascript"></script>
+<script src="/Ajax Messages System_files/jquery.nicescroll.min.js" type="text/javascript"></script>
+<script src="/Ajax Messages System_files/jquery.messages.js" type="text/javascript"></script>
+
+
+<div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: auto; cursor: -webkit-grab; position: absolute; top: 194px; left: 450px; height: 600px; opacity: 0;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 461px; border: 1px solid rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(47, 46, 46); background-clip: padding-box;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; top: 787px; left: 89px; position: absolute; display: none; width: 361px; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 368px; border: 1px solid rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(47, 46, 46); background-clip: padding-box;"></div></div><div id="ascrail2001" class="nicescroll-rails" style="width: 7px; z-index: auto; cursor: -webkit-grab; position: absolute; top: 111px; left: 1190.328125px; height: 51px; display: none; opacity: 0.22996639998127183;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; border: 1px solid rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(47, 46, 46); background-clip: padding-box;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; top: 155px; left: 458.328125px; position: absolute; display: none; opacity: 0.22996639998127183;"><div style="position: relative; top: 0px; height: 5px; width: 0px; border: 1px solid rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; left: 0px; background-color: rgb(47, 46, 46); background-clip: padding-box;"></div></div></body></html>

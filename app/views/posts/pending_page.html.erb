@@ -1,0 +1,67 @@
+<script src="/assets/change_switch.js?body=1" type="text/javascript"></script>
+
+<table class="table table-bordered table-striped table-hover acenter" id="datatable_league">
+  <thead>
+      <tr>
+     <!--  <th>Id -->
+      <th class="span1 acenter">ID</th>
+          <th class="span2 acenter" >Photo</th>
+          <th class="span3 acenter" >Logo </th>
+          <th class="span3 acenter" > User </th>
+          
+
+          <th class="span5 acenter" >Skills</th>
+          <th class="span2 acenter" >Project Name</th>
+          <th class="span2 acenter" >Url </th>
+          
+          <th class="span2 acenter" >Status</th>
+          <th class="span2 acenter" >Delete</th>
+          
+      </tr>
+  </thead>
+      <tbody id="tbody">
+        <%  @posts.each do |post| %>
+          <tr>
+             <td><%= post.id %>
+              <td class="acenter"><%= image_tag post.coverimage, :class=>"img_circl_smoll" %>
+              <td class="acenter"><%= image_tag post.logoimage, :class=>"img_circl_smoll" %>
+              <td><%= post.user.email rescue "" %>
+              <td><%= post.skills rescue "" %>
+              
+
+              
+              <td class="acenter"><%= post.project_name rescue " " %>
+              <td class="acenter"> <%= post.url rescue" " %>  
+             <td> 
+                 
+                   <input type=button value="Approve" id="is_approved<%=post.id rescue " "%>" class="nostyle" onclick="update_switch(<%=post.id rescue " "%> ,'Post','is_approved','is_approved<%=post.id %>');">
+                    
+                    
+
+                  
+                
+              </td>
+            
+            <td>
+               
+              
+             
+              <%#= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_post_path(post), :method => :delete, :title => "Delete", :class =>"delete_#{post.id}", :remote => :true, :confirm => 'Are you sure?' %>
+             </td>
+           
+          </tr>
+        <% end %>
+         
+      </tbody>
+  </table>
+
+
+
+<style type="text/css">
+.img_circl_smoll
+{
+    width:50px;
+    border-radius: 500px;
+}
+
+</style>

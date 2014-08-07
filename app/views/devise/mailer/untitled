@@ -1,0 +1,10 @@
+Hi Username,
+
+You've got someone interested in joining <%= @post.project_name %> <br>
+ wants to join in your team<br><br>
+<b>This is how they can help you</b>
+<%= @greeting.html_safe %>
+
+
+You can directly email them here <%= @to.email %> 
+Or contact them on launcherr.com. 

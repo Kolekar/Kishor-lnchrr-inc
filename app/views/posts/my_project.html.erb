@@ -1,0 +1,42 @@
+
+<div class="page-body">
+ <div id="portfolio-singlee" class="section-innere">
+          <div class="wrapper clearfix"> <br>
+      <%- model_class = Post -%> 
+        <div class="page-header"><br>
+
+  <h2>My Projects</h2><br>
+             <table class="table table-striped">
+                <thead>   
+                 <tr>
+                  <th>Project </th>
+                  <th><%= model_class.human_attribute_name(:quick_pitch) %></th>
+                  <th><%= model_class.human_attribute_name(:created_at) %></th>
+                  <th>Views</th>
+                  <th><i class="fa fa-edit"> </i>Edit</th>
+                  <th>Delete</th>
+                 </tr>
+                </thead>
+               <tbody>
+  <% @posts.each do |post| %>
+              <tr>
+
+                  <td><%= post.project_name %></td>
+                  <td><%= post.quick_pitch %></td>
+                  <td><%=l post.created_at, format: :long %></td>
+                  <td><i class="fa fa-eye"> 343 </i></td>
+                  <td><%= link_to post_path(post), :class => 'icon-fa-edit', :title => "#{ t('.show', :default => t('helpers.links.show')) }   " do %> <%= glyph 'info-sign' %> <%= glyph 'pencil' %> <%- end -%>
+                                                                                                                          </td>
+                   <td><%= link_to  post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'This will delete your project, are you sure you want to do this?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+                         <%= glyph 'remove' %>  
+              <%- end -%></td>
+                   </tr>
+    <% end %>
+  </tbody>
+</table><br><br>
+<center><%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'sr-button sr-button6 medium-button' %><br><br><br> </centre>
+
+
+            </div></div></div>

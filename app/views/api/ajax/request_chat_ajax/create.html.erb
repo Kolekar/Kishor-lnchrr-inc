@@ -1,0 +1,55 @@
+<div class="active-message">
+    <div class="media">
+        <a href="#" class="pull-left">
+            <img src="/Ajax Messages System_files/anna.jpg" class="media-object" width="65" height="65">
+        </a>
+        <div class="media-body innerBox-topbottom innerBox-right">
+            <div class="innerBox-top innerBox-half pull-right message-btn-target">
+            <a href="#type" class="btn btn-default btn-sm" id="type-a-message" data-toggle="collapse">
+                <i class="glyphicon glyphicon-pencil"></i> Write
+            </a>
+            </div>
+            <h4 class="pull-left strong"><%= @user.email %></h4>
+        </div>
+    </div>
+</div>
+
+<div id="type" class="collapse border-top">
+    <textarea type="text" class="form-control border-none type-a-message-box" id="<%= @user.id %>" placeholder="Write a message"></textarea>
+</div>
+
+<div class="border-top" id="text-messages">
+    
+            <% @messages.each do |message| %>
+                    <div class="media innerBox msg-div" id="u_msg<%= message.id %>">
+            <a href="#" class="pull-left hidden-xs">
+                <img src="/Ajax Messages System_files/mike.jpg" class="media-object" width="60" height="60">
+            </a>
+            <div class="media-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="chat-style">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="innerBox-right text-muted visible-xs">25/7/2014, 04:39 </span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php?id=1" class="strong text-inverse"><% if message.sent_messageable_id==current_user.id %>You <% else %> <%= User.find(message.sent_messageable_id).email rescue " " %><%end%></a><br />
+                                    <%= message.body %>
+                                                                    </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        <span class="pull-right innerBox-right text-muted"><i class="pull-right remove-message" id="<%= message.id %>" data-user="<%= current_user.id %>">&times;</i><%= message.created_at.strftime("%d %m %Y, %H:%M") %> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+                   
+            
+           <%= '<p class="innerBox border-top no-messages">No messages</p>'.html_safe if @messages.length==0 %>
+     
+    
+</div>

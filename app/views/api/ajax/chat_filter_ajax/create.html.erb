@@ -1,0 +1,22 @@
+<ul class="list-unstyled p0" id="messages-stack-list">
+    <% @users.each do| user |%>
+
+    <li class="prepare-message border-bottom" id="<%= user.id %>">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="http://pauloreg.com/messages/messages.php#">
+                    <img src="/Ajax Messages System_files/mike.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong"><%= user.email %></span></div>
+                <% unreaded=current_user.messages.are_from(user).are_to(current_user).unreaded.count %>
+                <% if unreaded!=0 %> 
+                    <div id="unreader-counter<%= user.id %>">Unread <span class="label label-warning" id="unreader-count-<%= user.id %>"><%= unreaded %></span></div>
+                <% end %>
+            </div>
+        </div>
+    </li>
+        
+    <% end%>
+</ul>

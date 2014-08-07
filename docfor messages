@@ -1,0 +1,224 @@
+/api/ajax/add_chat_ajax
+id:5
+message:zdfsd
+
+
+<div class="active-message">
+    <div class="media">
+        <a href="#" class="pull-left">
+            <img src="http://pauloreg.com/messages/images/mike.jpg" class="media-object" width="65" height="65">
+        </a>
+        <div class="media-body innerBox-topbottom innerBox-right">
+            <div class="innerBox-top innerBox-half pull-right message-btn-target">
+            <a href="#type" class="btn btn-default btn-sm" id="type-a-message" data-toggle="collapse">
+                <i class="glyphicon glyphicon-pencil"></i> Write
+            </a>
+            </div>
+            <h4 class="pull-left strong">Mike Boss</h4>
+        </div>
+    </div>
+</div>
+
+<div id="type" class="collapse border-top">
+    <textarea type="text" class="type-a-message-box form-control border-none" id="5" placeholder="Write a message"></textarea>
+</div>
+
+
+<div id="type" class="collapse border-top">
+    <textarea type="text" class="form-control border-none" id="type-a-message-box" placeholder="Escreva a mensagem"></textarea>
+</div>
+
+<div class="border-top" id="text-messages">
+	
+        	
+                    <div class="media innerBox msg-div" id="u_msg5">
+            <a href="profile.php?id=1" class="pull-left hidden-xs">
+                <img src="http://pauloreg.com/messages/images/anna.jpg" class="media-object" width="60" height="60">
+            </a>
+            <div class="media-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="chat-style">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="innerBox-right text-muted visible-xs">25/7/2014, 04:39 </span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php?id=1" class="strong text-inverse">You</a><br />
+                                    sdfsdfsdfdsfdf                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        <span class="pull-right innerBox-right text-muted"><i class="pull-right remove-message" id="5" data-user="1">&times;</i> 25/7/2014, 04:39</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+                    <div class="media innerBox msg-div" id="u_msg4">
+            <a href="profile.php?id=1" class="pull-left hidden-xs">
+                <img src="http://pauloreg.com/messages/images/anna.jpg" class="media-object" width="60" height="60">
+            </a>
+            <div class="media-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="chat-style">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="innerBox-right text-muted visible-xs">25/7/2014, 04:36 </span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php?id=1" class="strong text-inverse">You</a><br />
+                                    zdfsd                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        <span class="pull-right innerBox-right text-muted"><i class="pull-right remove-message" id="4" data-user="1">&times;</i> 25/7/2014, 04:36</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+                    <div class="media innerBox msg-div" id="u_msg3">
+            <a href="profile.php?id=1" class="pull-left hidden-xs">
+                <img src="http://pauloreg.com/messages/images/anna.jpg" class="media-object" width="60" height="60">
+            </a>
+            <div class="media-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="chat-style">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="innerBox-right text-muted visible-xs">25/7/2014, 04:27 </span>
+                                </div>
+                                <div class="media-body">
+                                    <a href="profile.php?id=1" class="strong text-inverse">You</a><br />
+                                    sdfdsfdf                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        <span class="pull-right innerBox-right text-muted"><i class="pull-right remove-message" id="3" data-user="1">&times;</i> 25/7/2014, 04:27</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+                
+     
+    
+</div>
+
+
+
+#############################################################################################
+
+/api/ajax/chat_filter_ajax
+
+filterword:sd
+
+
+<ul class="list-unstyled p0" id="messages-stack-list">
+    <li class="prepare-message border-bottom" id="2">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="#">
+                    <img src="http://pauloreg.com/messages/images/albert.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong">Albert Toss</span></div>
+                <div id="unreader-counter2"></div>
+            </div>
+        </div>
+    </li>
+    <li class="prepare-message border-bottom" id="3">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="#">
+                    <img src="http://pauloreg.com/messages/images/tracy.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong">Tracy</span></div>
+                <div id="unreader-counter3"></div>
+            </div>
+        </div>
+    </li>
+    <li class="prepare-message border-bottom" id="6">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="#">
+                    <img src="http://pauloreg.com/messages/images/jane.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong">Jane Doe</span></div>
+                <div id="unreader-counter6"></div>
+            </div>
+        </div>
+    </li>
+    <li class="prepare-message border-bottom" id="7">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="#">
+                    <img src="http://pauloreg.com/messages/images/betty.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong">Betty Faces</span></div>
+                <div id="unreader-counter7"></div>
+            </div>
+        </div>
+    </li>
+    <li class="prepare-message border-bottom" id="8">
+        <div class="media innerBox">
+            <div class="media-object pull-left hidden-phone">
+                <a href="#">
+                    <img src="http://pauloreg.com/messages/images/carla.jpg" width="50" height="50" alt="User">
+                </a>
+            </div>
+            <div class="media-body">
+                <div><span class="strong">Carla J</span></div>
+                <div id="unreader-counter8"></div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+OR
+<ul class="list-unstyled p0" id="messages-stack-list">
+    <li class="border-bottom"><p class="innerBox">No users found</p></li>
+</ul>
+
+################################################################################################
+
+request_chat_ajax
+
+
+
+id:8
+
+<div class="active-message">
+    <div class="media">
+        <a href="#" class="pull-left">
+            <img src="http://pauloreg.com/messages/images/carla.jpg" class="media-object" width="65" height="65">
+        </a>
+        <div class="media-body innerBox-topbottom innerBox-right">
+            <div class="innerBox-top innerBox-half pull-right message-btn-target">
+            <a href="#type" class="btn btn-default btn-sm" id="type-a-message" data-toggle="collapse">
+                <i class="glyphicon glyphicon-pencil"></i> Write
+            </a>
+            </div>
+            <h4 class="pull-left strong">Carla J</h4>
+        </div>
+    </div>
+</div>
+
+<div id="type" class="collapse border-top">
+    <textarea type="text" class="form-control border-none type-a-message-box" id="8" placeholder="Write a message"></textarea>
+</div>
+
+<p class="innerBox border-top no-messages">No messages</p>
