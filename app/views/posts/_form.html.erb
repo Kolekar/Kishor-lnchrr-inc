@@ -21,136 +21,52 @@
 
 
    
-    <p><b>Project Name</b> <br>
-      <%= f.text_field :project_name, :class => 'text-field form-control' %><br>
-  
-    <p><b>Quick Pitch</b>  <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top" data-toggle="modal" data-target="#quickpitch"><i class="fa-info-circle fa"></i> </a></p>
-    
-      <%= f.text_field :quick_pitch, placeholder: 'This is a 140 character pitch designed to entice users to view your project', :class => 'text-field form-control' %><br>
-   
-     <p><b>Upload Cover Image</b> <br> <font size ="3px"> 1400w x 290h</p>
-      <%= f.file_field :coverimage, :class => 'text-field form-control' %><br>
- 
-     <p><b>Upload Logo</b> <font size ="3px"><br> 400 x 400 </P>
-      <%= f.file_field :logoimage, :class => 'text-field form-control' %><br>
-    
+          <p><b>Project Name</b> <br>
+               <%= f.text_field :project_name, :class => 'text-field form-control' %><br>
+        
+          <p><b>Quick Pitch</b>  <br>
+               <%= f.text_field :quick_pitch, :maxlength => 140, placeholder: 'This is a 140 character pitch designed to entice users to view your project', :class => 'text-field form-control' %><br>
+         
+           <p><b>Upload Cover Image</b> <br> <font size ="3px"> 1400w x 290h</p>
+               <%= f.file_field :coverimage, :class => 'text-field form-control' %><br>
+       
+           <p><b>Upload Logo</b> <font size ="3px"><br> 400 x 400 </P>
+               <%= f.file_field :logoimage, :class => 'text-field form-control' %><br>
+          
 
-    <p><b>Full Pitch</b> <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top" data-toggle="modal" data-target="#fullpitch"><i class="fa-info-circle fa"></i> </a></p>
-      <%= f.cktext_area :full_pitch,  :class => 'text-field form-control' %><br>
+          <p><b>Full Pitch</b> <br>
+               <%= f.cktext_area :full_pitch,  :class => 'text-field form-control' %><br>
 
-    <p><b>Who Do You Need?</b>  <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top" data-toggle="modal" data-target="#skills"><i class="fa-info-circle fa"></i> </a></p>
-  
-      <%= f.text_field :tag_list, placeholder: "designer, architect, blogger, photographer, etc", :class => 'text-field form-control' %><br>
+          <p><b>Who Do You Need?</b><br>
+               <%= f.text_field :tag_list, placeholder: "designer, architect, blogger, photographer, etc", :class => 'text-field form-control' %><br>
 
-      <p><b>Select One</b>  <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top" data-toggle="modal" data-target="#skills"><i class="fa-info-circle fa"></i> </a></p>
+            <p><b>Select One</b><br>
+               <%= f.select :category, options_for_select([["Select One", ""], "Startups", "Causes", "Film", "Music", "Art","Dance", "Technology", "Adventure","Photography", "Gadgets", "Inventions", "Innovation","Music", "Personal"]), :class => 'text-field form-control' %>
 
-      <%= f.select :category, options_for_select([["Select One", ""], "Startups", "Causes", "Film", "Music", "Art","Dance", "Technology", "Adventure","Photography", "Gadgets", "Inventions", "Innovation","Music", "Personal"]), :class => 'text-field form-control' %>
-
-    <p><b>Video Pitch</b> <i class="fa-info-circle fa"></i></P>
-      <%= f.text_field :youtube_id, placeholder: "https://www.youtube.com/watch?v=yr1GP8PTsr4",:class => 'text-field form-control' %><br>
-   
-     <p><b>Website URL</b> <i class="fa-info-circle fa"></i></P>
-    
-      <%= f.text_field :url, :class => 'text-field form-control' %><br>
-   
-    <p><b>What will you be adding to the project?</b> <i class="fa-info-circle fa"></i></P>
-    
-      <%= f.text_area :to_the_table, :class => 'text-field form-control' %><br>
-   
-     <p><b>How will you compensate your team?</b>  <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top" data-toggle="modal" data-target="#compensate"><i class="fa-info-circle fa"></i> </a></p>
-    
-      <%= f.text_area :compensation_method, :class => 'text-field form-control' %><br>
-    
-     <p><b>Where is this project located?</b></P>
-  
-      <%= f.text_field :location, placeholder: ' eg, "New York City"', :class => 'text-field form-control' %><br>
-    
- <!--  INCLUDE LATER ON DOWN THE TRACK <%#= f.label :tags, :class => 'control-label col-md-2' %>
-    
-      <%#= f.text_area :tags, :class => 'text-field form-control' %><br><br> -->
-    <br>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-     
-    </div>
-  </div></div></div></div>
-<% end %>
-</div>
-
-
-<!-- Quick Pitch -->
-<div class="modal fade" id="quickpitch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span aria-hidden="true">&times;</span><span class="sr-only"></span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel"><strong>The Quick Pitch</strong></h4>
-          </div>
-          <div class="modal-body">
-            <div class="row-fluid">
-              The Quick Pitch is a 140 character pitch that's designed to entice users to join your idea. This is used to
-            </div>
+          <p><b>Video Pitch</b> <br>
+               <%= f.text_field :youtube_id, placeholder: "https://www.youtube.com/watch?v=yr1GP8PTsr4",:class => 'text-field form-control' %><br>
+         
+           <p><b>Website URL</b></p>
+                <%= f.text_field :url, :class => 'text-field form-control' %><br>
+         
+          <p><b>How will you be personally involved in this project?</b> </p>
+                <%= f.text_area :to_the_table, :class => 'text-field form-control' %><br>
+         
+           <p><b>How will you compensate your team?</b> <br>
+                <%= f.text_area :compensation_method, :class => 'text-field form-control' %><br>
+          
+           <p><b>Where is this project located?</b></P>
+                <%= f.text_field :location, placeholder: ' eg, "New York City"', :class => 'text-field form-control' %><br>
+          
+       <!--  INCLUDE LATER ON DOWN THE TRACK <%#= f.label :tags, :class => 'control-label col-md-2' %>
+          
+            <%#= f.text_area :tags, :class => 'text-field form-control' %><br><br> -->
+          <br>
+            <%= f.submit nil, :class => 'btn btn-primary' %>
+           
           </div>
         </div>
+      <% end %>
       </div>
-    </div>
 
-    <!-- Full Pitch -->
-<div class="modal fade" id="fullpitch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span aria-hidden="true">&times;</span><span class="sr-only"></span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Your Full Pitch</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row-fluid">
-               This is the area you upload your entire pitch. We suggest selling your vision for the project, why you're doing it, why you are passionate about it, where you'll execute it, your culture, etc.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Skills Needed -->
-<div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            
-              <span aria-hidden="true"></span><span class="sr-only"></span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">The Skills You Need</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row-fluid">
-              Launcherr is designed to find skills for your project (yes, way to go captain obvious). This is the area where you list the skills you need to execute your idea. List them below seperated with a comma and it'll be posted on your project page.<br>
-              <button type="button" class="close" data-dismiss="modal">
-                
-                   <a href="#" class="sr-button sr-button2 mini-button" data-dismiss="modal">Close</a>
-                 </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Compensation -->
-<div class="modal fade" id="compensate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span aria-hidden="true">&times;</span><span class="sr-only"></span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">How Will You Compensate Your Team?</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row-fluid">
-              Insert Explanation Here
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+

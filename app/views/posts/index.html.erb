@@ -1,13 +1,7 @@
- 
-
-
-
-<!--CSS-->
-
- <!-- PASSIONATE -->
+ <!-- Slider -->
       <div id="passionate" class="horizontalsection text-light parallax-section">
       <div class="horizontalinner wrapper align-center">
-        <h2g> #createsomethingincredible </h2g>
+        <h2g> Create Something Incredible </h2g>
         
         <div class="spacer spacer-small"></div>
           <% if user_signed_in? %>
@@ -30,7 +24,7 @@
     
 <center><%= form_tag posts_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %><%= submit_tag "Search Near", :name => nil %>
+   <!-- <%= text_field_tag :search, params[:search] %><%= submit_tag "Search Near", :name => nil %> -->
   </p></center>
 <% end %>
          <div id="grid">
