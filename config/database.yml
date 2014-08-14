@@ -14,17 +14,16 @@ development:
   database: launcherr
   pool: 5
   username: root
-  password: root
-
+  password: 
   host: localhost
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: launcherr
-  pool: 5
-  username: root
-  password: root
-  host: localhost
+  socket: /opt/lampp/var/mysql/mysql.sock
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: launcherr
+#   pool: 5
+#   username: root
+#   password: root
+#   host: localhost
 #planbit_load
 #planbit3
