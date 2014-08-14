@@ -33,11 +33,6 @@
 class Post < ActiveRecord::Base
 	extend FriendlyId
 
-  attr_accessible :project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills,
-                  :youtube_id, :to_the_table, :compensation_method, :location, :url, :content,
-                  :name, :tag_list,:category,:latitude,:longitude, :is_approved, :redirect_url
-
-
   friendly_id :project_name, use: :slugged
   acts_as_taggable
   geocoded_by :location

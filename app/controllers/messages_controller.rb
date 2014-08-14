@@ -4,7 +4,6 @@ class MessagesController < ApplicationController
 
   def index
     @users = User.where("id != ?", current_user.id)
-    @users -= [current_user]
   end
 
   def join_team
