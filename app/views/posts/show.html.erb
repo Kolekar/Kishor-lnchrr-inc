@@ -6,31 +6,29 @@
         <!-- Twitter Card data --> 
         <meta name="twitter:card" content="Insert Quick Pitch"> 
         <meta name="twitter:site" content="@lnchrr"> 
-        <meta name="twitter:title" content="Insert Project Name"> 
+        <meta name="twitter:title" content="<%= @post.project_name %>"> 
         <meta name="twitter:description" content="qp"> 
-        <meta name="twitter:creator" content="@author_handle"> 
+        <meta name="twitter:creator" content="@lnchrr"> 
         <!-- Twitter Summary card images must be at least 200x200px --> 
         <meta name="twitter:image" content="  Insert Logo Image ">
 
         <!-- Open Graph data --> 
-        <meta property="og:title" content="Insert Project Name" /> 
-        <meta property="og:type" content="Insert Category" /> 
+        <meta property="og:title" content="<%= @post.project_name %>" /> 
+        <meta property="og:type" content="<%= @post.category %>" /> 
         <meta property="og:url" content=" <%= "http://launcherr.com" + post_path(@post) %>" />
         <meta property="og:image" content=" Insert Logo Image" />
-        <meta property="og:description" content="" /> 
+        <meta property="og:description" content="Crowdsourcing People to Launch Creative Projects" /> 
         <meta property="og:site_name" content="Launcherr - Create Something Incredible" /> 
         <meta property="fb:admins" content="Facebook numeric ID" />
 
 <% end %>
-
-      
 
       <!-- PAGEBODY -->
       <div class="page-body"></div>
 
         <!-- Cover Photo-->
         <div class="top-area">
-          <%=image_tag @post.coverimage.url %></div>
+          <%=image_tag @post.coverimage.url, height: '680', width: '1200' %></div>
         </div>
           <!-- ul class="socialmedia-widget social-share">
             <li class="facebook">
@@ -61,81 +59,50 @@
                                      frameborder="1" scrolling="no"> </iframe>
                                      
                 </div>
-                <!-- MAIN DESCRIPTION -->
-                <br> <h5><strong>About <%= @post.project_name %> </h6></strong>
-<br><%= raw @post.full_pitch %>
-<br>
+                        <!-- MAIN DESCRIPTION -->
+                         <br> <h5><strong>About <%= @post.project_name %> </h6></strong>
+                         <br><%= raw @post.full_pitch %>
+                         <br>
 
-              <!-- COMPENSATION --></p>
-              <h6><strong> How  You Will Be Compensated</strong></h6>
-              <p><%= @post.compensation_method %></p>
+                        <!-- COMPENSATION --></p>
+                         <h6><strong> How  You Will Be Compensated</strong></h6>
+                         <p><%= @post.compensation_method %></p>
 
-                <!-- What Can Project Author Bring to the Table?-->                
-                </p>
-              <h6><strong> What can I bring to the table? </strong></h6>
-              <p><%= @post.to_the_table %>
-                <br> <br> 
-                 </div>
+                        <!-- What Can Project Author Bring to the Table?-->                
+                         </p>
+                        <h6><strong> What can I bring to the table? </strong></h6>
+                       <p><%= @post.to_the_table %>
+                     <br> 
+                    <br> 
+               </div>
 
-                <!-- END .main-content -->
+      <!-- END MAIN PITCH -->
 
-                <!-- PROJECT INFO // SIDEBAR -->
-              </p>
-              <aside class="right-float">
-                            
-                <!-- Start Location -->
-                <div class="entry-content portfolio-content">
-
-
-                  <!-- Skills -->
-                   <div class="entry-content portfolio-content"> <h4><strong> Who We Need: </strong></h4></div>
-                    <ul>
-                    <%#=raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %>
-                    <% @post.tag_list.each do |t|  %>
-                    <li><%= t %></li>
-                    <% end %>
-
-
-                  </ul>
-                   
-                  <!-- TEAM NEEDED -->
-               
-                                  <br>
-                                  <a data-toggle="modal" href="#myModal" class="sr-button sr-button5 big-button">JØIN TEAM</a></p>
-                
-                  
-                  <h6> <i class="fa fa-map-marker"> </i> <%= @post.location %></h6>
-                  <h6> <i class="fa fa-link"> </i> <%= @post.url %></h6>
-                  <h6> <i class="fa fa-clock-o"> </i> <%= @post.created_at %></i>.</h6>
-                        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{@post.latitude}%2C#{@post.longitude}" %>
-                       
-                                  <h6><strong> Category</strong></h6>
-              <p><%= @post.category %></p>
-                                  
-                                
-                    <!-- END COUNTDOWN -->
-                    
+      <!-- PROJECT INFO // SIDEBAR -->
+       </p><aside class="right-float">
+          <div class="entry-content portfolio-content"> 
               
-                        
-
-                  <!-- START TAGS  -->
-                                     <div class="widget tag-widget">
-                      
+              <h4><strong> Who We Need: </strong></h4></div>
+                  <ul>
+                        <%#=raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %>
+                        <% @post.tag_list.each do |t|  %>
+                        <li><%= t %></li>
+                    <% end %>
+                  </ul><br>
+                  <a data-toggle="modal" href="#myModal" class="sr-button sr-button5 big-button">JØIN TEAM</a></p>
+                      <h6> <i class="fa fa-map-marker"> </i> <%= @post.location %></h6>
+                      <h6> <i class="fa fa-link"> </i> <%= @post.url %></h6>
+                      <h6> <i class="fa fa-clock-o"> </i> <%= @post.created_at %></i>.</h6><br>
+                      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{@post.latitude}%2C#{@post.longitude}" %>
                        
-                   
-                </div> <br><br>
-
-                
-                                
-                    <!-- End tag-widget -->
-                                     
-                                
-                               
-                                
-                            <!-- SIDEBAR -->
-
+                      <h6><strong> Category</strong></h6>
+                      <p><%= @post.category %></p>
+                     
+        </div> <br><br>               
       </div>
-            <!-- END .wrapper -->
+
+            <!-- END PROJECT INFO // SIDEBAR -->
+            <!--JOIN TEAM MODAL -->
 
             <div class="spacer spacer-big"></div>
                 <div class="spacer spacer-big"></div>
@@ -151,6 +118,7 @@
                   <div class="column one-half"> 
                     <%= form_tag "/messages/join_team", :id=>"contact-form", :class=>"checkform" do   %>
                     <form id="contact-form" class="checkform" action="#" target="contact-send.php" method="post" > 
+
                           <div class="form-row clearfix textbox">
                               <label for="message" class="req">What can you bring to <%= @post.project_name %> </label>
                               <div class="form-value"><textarea name="message" class="message" id="message" rows="15" cols="50"></textarea></div>

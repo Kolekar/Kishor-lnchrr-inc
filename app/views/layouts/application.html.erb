@@ -40,7 +40,7 @@
 
 					<div id="logo" class="left-float">
 						<a id="defaut-logo" class="logotype" href="/">
-						<%= image_tag("headerlogo.png", :size => "64x64", :alt => "Show Group") %></a>
+						<%= image_tag("headerlogo.png", :size => "64x64", :alt => "Launcherr Logo") %></a>
 					</div>
 
 					<div class="menu left-float clearfix">
@@ -71,28 +71,27 @@
 										<li><%#= current_user.received_messages.count %></li>
 										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li></li></ul></li>
 								  </ul>
-							<% else %>
+							  <% else %>
 								<nav id="main-nav"><ul>
 		  							   <li><%= link_to "Login", new_user_session_path %></li>
           							   <li><%= link_to "Sign Up", new_user_registration_path %></li>
-       					  	<% end %>
-		      			<% end %>
-		      				  	 
-								</nav>
-							  </div>
-						    </div>
-		                </header>
-		              </div>
+       					      <% end %>
+		      			  <% end %>
+		      			</nav>
+					 </div>
+				  </div>
+		        </header>
+		      </div>
 					
                       
-	<% if flash[:error] %>
-  <p class="error" > <%= flash[:error].html_safe %></p><br />
-<%end%>
-<% if flash[:alert] %>
-  <p class="error" > <%= flash[:alert].html_safe %></p><br />
-<%end%>
+			  <% if flash[:error] %>
+			  <p class="error" > <%= flash[:error].html_safe %></p><br />
+			  <%end%>
+			  <% if flash[:alert] %>
+			  <p class="error" > <%= flash[:alert].html_safe %></p><br />
+			  <%end%>
 
-		
+<!-- CONTENT -->		
 
 
 <%= yield %>
@@ -113,7 +112,7 @@
 									  <%= link_to 'Press',  pages_press_path,style: 'color:#FFFFFF;' %><br>
 									  Blog<br>
 									  <%= link_to 'Help',  pages_help_path,style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Policies',  pages_policies_path, style: 'color:#FFFFFF;' %><br>
+									  <%= link_to 'About',  pages_policies_path, style: 'color:#FFFFFF;' %><br>
 									  <%= link_to 'Terms & Privacy',  pages_terms_path, style: 'color:#FFFFFF;' %><br></p>
                  				</div> 
                  					<!-- END ONE -->
@@ -170,27 +169,6 @@
 				    </ul>
                <font color="#434343">   © Launcherr, inc </font>
                  					<!-- END four -->
-
-<!-- login -->
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            
-						<button type="button" class="close" data-dismiss="modal">
-							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-						</button><br>
-						<center>
-							<font color ="000000"><h4 class="modal-title" id="myModalLabel" >Welcome To LNCHR</h4></font>
-							<br>
-								<div class="seperator size-small"><span></span></div>
-							<%= image_tag("fblogin.png",  :size => "64x64", :alt => "Show Group") %>
-						</center>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 					 
 					

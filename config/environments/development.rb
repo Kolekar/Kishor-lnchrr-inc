@@ -35,8 +35,8 @@ Launcherr::Application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => "gmail.com",
-  :user_name            => 'testapp8806@gmail.com',
-  :password             => 'test8806',
+  :user_name            => 'staff@launcherr.com',
+  :password             => 'LNCHRR//2014',
   :authentication       => 'login',
   :enable_starttls_auto => true  }
   

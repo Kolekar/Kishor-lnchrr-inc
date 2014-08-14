@@ -2,14 +2,16 @@
  <div id="portfolio-singlee" class="section-innere">
           <div class="wrapper clearfix">
 
-<div class="page-header">
-  <h1><%=t ".title", default: "Sign in" %></h1>
+
+<br><br>
+<div class="page-header"> <center> <h3> Welcome to Launcherr </h3>
+  <a href ="/users/auth/facebook"> <%= image_tag("fblogin.png", :size => "64x64", :alt => "Show Group") %></a></center>
 </div>
 
+<div class="column one-half">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
-
-  
+  <h3> Login</h3>
      <h5> Username </h5>
     <div class="col-md-8">
       <%= f.text_field :login, class: "text-field form-control", html: {spellcheck: "false"} %>
@@ -26,8 +28,8 @@
       <div class="col-md-8">
         Remember Me <%= f.check_box :remember_me %>
       </div>
-    
   <% end -%>
+  
                           <br><br>                                                                                                              
   <div class="form-group">
     <div class="col-md-offset-4 col-md-8">
@@ -39,6 +41,23 @@
     <div class="col-md-offset-4 col-md-8">
       <%= render "devise/shared/links" %>
     </div>
-  </div></div></div></div><br>
+  </div>
+
+<div class="column one-half last-col"> 
+    <h3> Sign Up </h3>
+  </div>
+
+
+</div></div><br>
 
 <% end %>
+
+
+
+
+
+
+
+
+
+
