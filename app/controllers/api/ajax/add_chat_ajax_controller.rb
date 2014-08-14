@@ -1,6 +1,4 @@
-class Api::Ajax::AddChatAjaxController < ApplicationController
-	layout :false
-	skip_before_filter :verify_authenticity_token
+class Api::Ajax::AddChatAjaxController < Ajax::ModuleController
 	def create
 		@user=User.find(params[:id])
 		current_user.send_message(@user, params[:message], params[:message])

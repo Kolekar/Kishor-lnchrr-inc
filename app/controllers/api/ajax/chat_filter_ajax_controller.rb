@@ -1,9 +1,6 @@
-class Api::Ajax::ChatFilterAjaxController < ApplicationController
-	layout false
-	skip_before_filter :verify_authenticity_token
+class Api::Ajax::ChatFilterAjaxController < Ajax::ModuleController
 	def create
-		
-			@users=User.where("email like '%#{params[:filterword]}%'")
-			@users -= [current_user]
+		@users=User.where("email like '%#{params[:filterword]}%'")
+		@users -= [current_user]
 	end
 end
