@@ -38,10 +38,9 @@ gem 'friendly_id', '~> 5.0.1'
 gem 'google-analytics-rails'
 gem 'simple_form'
 gem 'geocoder'
-gem 'acts-as-messageable', :git => 'git://github.com/hocza/acts-as-messageable.git'
+gem 'acts-as-messageable', github: 'LTe/acts-as-messageable'
 gem 'acts-as-taggable-on'
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
-gem 'protected_attributes'
 
 
 # additional validation helper
