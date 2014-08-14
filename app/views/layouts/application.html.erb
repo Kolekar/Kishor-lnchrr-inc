@@ -35,167 +35,167 @@
 <%= render partial: "elements/navbar" %>
 <%= bootstrap_flash %>
 <div id="page-content" class="fixed-header">
-<header id="header">
-				<div class="header-inner wrapper clearfix">
+	<header id="header">
+		<div class="header-inner wrapper clearfix">
 
-					<div id="logo" class="left-float">
-						<a id="defaut-logo" class="logotype" href="/">
-						<%= image_tag("headerlogo.png", :size => "64x64", :alt => "Show Group") %></a>
-					</div>
+			<div id="logo" class="left-float">
+				<a id="defaut-logo" class="logotype" href="/">
+				<%= image_tag("headerlogo.png", :size => "64x64", :alt => "Show Group") %></a>
+			</div>
 
-					<div class="menu left-float clearfix">
-						<nav id="main-nav">
-							</li>
+			<div class="menu left-float clearfix">
+				<nav id="main-nav">
+				<!-- 	</li>
 
-							</ul>
-						</nav>
-						<nav id="menu-controls">
-							
-							
-						</nav>
-					</div>
+					</ul> -->
+				</nav>
+				<nav id="menu-controls">
 					
-					<div class="right-float" style="text-align: left">
-					<!-- Logged in Header-->
-						<% if defined?(Devise) %>
-      					 <% if user_signed_in? %>
-								<nav id="main-nav">
-								  <ul><li>
-										<a href="#"> Welcome </a>
-										<ul class="sub-menu"> 
+					
+				</nav>
+			</div>
+			
+			<div class="right-float" style="text-align: left">
+			<!-- Logged in Header-->
+				<% if defined?(Devise) %>
+				  <% if user_signed_in? %>
+						<nav id="main-nav">
+						  <ul>
+						  	<li>
+									<a href="#"> Welcome </a>
+									<ul class="sub-menu"> 
 										<!-- MAKE THIS A CLICK INSTEAD OF HOVER -->
-           							    <li><%= link_to "My Projects", my_project_posts_path %></li></li>
-									    <li><%= link_to "My Account", edit_user_registration_path %></li>
-										</li> <% x = 7 %>
-										<li><%= link_to "Messages", inbox_posts_path %></li></li>
+	     							<li><%= link_to "My Projects", my_project_posts_path %></li>
+							      <li><%= link_to "My Account", edit_user_registration_path %></li>
+										<% x = 7 %>
+									  <li><%= link_to "Messages", inbox_posts_path %></li>
 										<li><%#= current_user.received_messages.count %></li>
-										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li></li></ul></li>
-								  </ul>
-							<% else %>
-								<nav id="main-nav"><ul>
-		  							   <li><%= link_to "Login", new_user_session_path %></li>
-          							   <li><%= link_to "Sign Up", new_user_registration_path %></li>
-       					  	<% end %>
-		      			<% end %>
-		      				  	 
-								</nav>
-							  </div>
-						    </div>
-		                </header>
-		              </div>
+										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+										</li>
+									</ul>
+								</li>
+						  </ul>
+						</nav>
+					<% else %>
+						<nav id="main-nav"><ul>
+					    <ul>
+						    <li><%= link_to "Login", new_user_session_path %></li>
+							  <li><%= link_to "Sign Up", new_user_registration_path %></li>
+						  </ul>
+	 				<% end %>
+	    	<% end %>
+		  </div>
+	  </div>
+	</header>
+            
 					
                       
 	<% if flash[:error] %>
-  <p class="error" > <%= flash[:error].html_safe %></p><br />
-<%end%>
-<% if flash[:alert] %>
-  <p class="error" > <%= flash[:alert].html_safe %></p><br />
-<%end%>
-
-		
-
-
-<%= yield %>
-
-
-
+	  <p class="error" > <%= flash[:error].html_safe %></p><br />
+	<%end%>
+	<% if flash[:alert] %>
+	  <p class="error" > <%= flash[:alert].html_safe %></p><br />
+	<%end%>
+	<%= yield %>
 <!-- FOOTER -->
 
-				<footer>
-				  <div class="footerinner wrapper align-center text-light">
-						
-						<p class="footer-logo"><%= image_tag("footerlogo.png", :size => "64x64", :alt => "Show Group") %></a>
-						</p>
-						<div class="column-section clearfix align-center"> 
-              					<div class="column one-fourth">
-                 					  <p align="left"><strong> About </strong><br><br>
-                 					  <%= link_to 'Jobs',  pages_jobs_path,style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Press',  pages_press_path,style: 'color:#FFFFFF;' %><br>
-									  Blog<br>
-									  <%= link_to 'Help',  pages_help_path,style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Policies',  pages_policies_path, style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Terms & Privacy',  pages_terms_path, style: 'color:#FFFFFF;' %><br></p>
-                 				</div> 
+	<footer>
+	  <div class="footerinner wrapper align-center text-light">						
+			<p class="footer-logo">
+				<%= image_tag("footerlogo.png", :size => "64x64", :alt => "Show Group") %>
+			</p>
+			<div class="column-section clearfix align-center"> 
+				<div class="column one-fourth">
+				  <p align="left"><strong> About </strong><br><br>
+ 					  <%= link_to 'Jobs',  pages_jobs_path,style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Press',  pages_press_path,style: 'color:#FFFFFF;' %><br>
+					  Blog<br>
+					  <%= link_to 'Help',  pages_help_path,style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Policies',  pages_policies_path, style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Terms & Privacy',  pages_terms_path, style: 'color:#FFFFFF;' %><br>
+					</p>
+        </div> 
                  					<!-- END ONE -->
-                 				<div class="column one-fourth">
-                 					 <p align="left"><strong> Discover </strong><br><br>
-                 					  <%= link_to 'Trust & Safety',  pages_trustsafety_path, style: 'color:#FFFFFF;'   %><br>
-								      <%= link_to 'Invite Friends',  pages_invitefriends_path, style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Projects we ',  pages_projectswelove_path, style: 'color:#FFFFFF;' %> <i class=" fa fa-heart-o"> </i><br>
-									  <%= link_to 'Mobile',  pages_mobile_path, style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Support Creativity',  pages_supportcreativity_path, style: 'color:#FFFFFF;' %><br>
-									  <%= link_to 'Site Map',  pages_sitemap_path, style: 'color:#FFFFFF;' %> </p>
-                 				</div> 
-                 					<!-- END TWO -->
+ 				<div class="column one-fourth">
+ 					<p align="left"><strong> Discover </strong><br><br>
+ 					  <%= link_to 'Trust & Safety',  pages_trustsafety_path, style: 'color:#FFFFFF;'   %><br>
+			      <%= link_to 'Invite Friends',  pages_invitefriends_path, style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Projects we ',  pages_projectswelove_path, style: 'color:#FFFFFF;' %> <i class=" fa fa-heart-o"> </i><br>
+					  <%= link_to 'Mobile',  pages_mobile_path, style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Support Creativity',  pages_supportcreativity_path, style: 'color:#FFFFFF;' %><br>
+					  <%= link_to 'Site Map',  pages_sitemap_path, style: 'color:#FFFFFF;' %> 
+					</p>
+ 				</div> 
+        <!-- END TWO -->
 
-                 				<div class="column one-fourth">
-								  	  <p align="left"><strong>Creative</strong><br><br>
+ 				<div class="column one-fourth">
+		  	  <p align="left"><strong>Creative</strong><br><br>
 
-									  Startups<br>
-									  Non Profit<br>
-									  Film, Music, Art<br>
-								      Technology<br>
-								      Photography<br>
-								      Adventure
-								  </p>
-                 					  </p>
-                 				</div> 
-                 					<!-- END three -->
-
-                 				<div class="column one-fourth last-col">
-                 					  <p align="left"><strong> Projects</strong><br><br>
-                 					  <%= link_to 'Preparing a Project',  pages_prepareproject_path, style: 'color:#FFFFFF;'  %><br>
-                 					  <%= link_to 'Project Guidelines',  pages_projectguidelines_path, style: 'color:#FFFFFF;'  %><br>
-									  <%= link_to 'Protecting Your Idea',  pages_protectingyouridea_path, style: 'color:#FFFFFF;' %><br>
-									       Responsible Project Management<br>
-								      <%= link_to 'Stories',  pages_stories_path, style: 'color:#FFFFFF;' %><br>
-								  	  <%= link_to 'Joining a team',  pages_joiningteams_path, style: 'color:#FFFFFF;' %><br></p>
-                 				</div> </font>
-                 		</div>	
-                 <div class="seperator size-large height-small"><span></span></div>	
-                 					<ul class="socialmedia-widget social-share">
-							<li class="facebook">
-								<a href="http://facebook.com/lnchrr" target="_blank">Facebook</a>
-							</li>
-							<li class="twitter">
-								<a href="http://twitter.com/lnchrr" target="_blank">Tweet</a>
-							</li>
-							<li class="linkedin">
-								<a href="http://www.linkedin.com/company/launcherr" target="_blank"> Linkedin</a>
-							</li>
-							<li class="pinterest"><a href="http://www.pinterest.com/launcherr" target="_blank">Pinterest</a></li>
-							<li class="instagram">
-								<a href="http://instagram.com/lnchrr" target="_blank">Instagram</a>
-							</li>
-				    </ul>
-               <font color="#434343">   © Launcherr, inc </font>
+					  Startups<br>
+					  Non Profit<br>
+					  Film, Music, Art<br>
+				      Technology<br>
+				      Photography<br>
+				      Adventure
+				  </p>
+				</div> 
+        <!-- END three -->
+ 				<div class="column one-fourth last-col">
+				  <p align="left"><strong> Projects</strong><br><br>
+					  <%= link_to 'Preparing a Project',  pages_prepareproject_path, style: 'color:#FFFFFF;'  %><br>
+					  <%= link_to 'Project Guidelines',  pages_projectguidelines_path, style: 'color:#FFFFFF;'  %><br>
+					  <%= link_to 'Protecting Your Idea',  pages_protectingyouridea_path, style: 'color:#FFFFFF;' %><br>
+				       Responsible Project Management<br>
+			      <%= link_to 'Stories',  pages_stories_path, style: 'color:#FFFFFF;' %><br>
+			  	  <%= link_to 'Joining a team',  pages_joiningteams_path, style: 'color:#FFFFFF;' %><br>
+			  	</p>
+ 				</div> 
+ 		  </div>	
+	    <div class="seperator size-large height-small"><span></span></div>	
+			<ul class="socialmedia-widget social-share">
+				<li class="facebook">
+					<a href="http://facebook.com/lnchrr" target="_blank">Facebook</a>
+				</li>
+				<li class="twitter">
+					<a href="http://twitter.com/lnchrr" target="_blank">Tweet</a>
+				</li>
+				<li class="linkedin">
+					<a href="http://www.linkedin.com/company/launcherr" target="_blank"> Linkedin</a>
+				</li>
+				<li class="pinterest"><a href="http://www.pinterest.com/launcherr" target="_blank">Pinterest</a></li>
+				<li class="instagram">
+					<a href="http://instagram.com/lnchrr" target="_blank">Instagram</a>
+				</li>
+		  </ul>
+	    <font color="#434343">   © Launcherr, inc </font>
                  					<!-- END four -->
 
 <!-- login -->
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            
-						<button type="button" class="close" data-dismiss="modal">
-							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-						</button><br>
-						<center>
-							<font color ="000000"><h4 class="modal-title" id="myModalLabel" >Welcome To LNCHR</h4></font>
-							<br>
-								<div class="seperator size-small"><span></span></div>
-							<%= image_tag("fblogin.png",  :size => "64x64", :alt => "Show Group") %>
-						</center>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button><br>
+							<center>
+								<font color ="000000"><h4 class="modal-title" id="myModalLabel" >Welcome To LNCHR</h4></font>
+								<br>
+									<div class="seperator size-small"><span></span></div>
+								<%= image_tag("fblogin.png",  :size => "64x64", :alt => "Show Group") %>
+							</center>
+		          </div>
+		        </div>
+		      </div>
+		  </div>
+		</div>
 
 					 
 					
-		  </footer>
+	</footer>
 				<!-- FOOTER -->
+</div>
 			<script>
 
 				$( 'document' ).ready( function( ) {
