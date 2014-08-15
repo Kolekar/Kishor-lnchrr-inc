@@ -21,9 +21,7 @@
 
 class Message < ActiveRecord::Base
 
-	 attr_accessor :topic
-	 attr_accessor :body
 	 belongs_to :sent_user, :foreign_key=>"sent_messageable_id", :class_name=>"User"
 	 belongs_to :receive_user, :foreign_key=>"received_messageable_id", :class_name=>"User"
-	 
+
 end
