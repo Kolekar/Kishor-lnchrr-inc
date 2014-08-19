@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728134831) do
+ActiveRecord::Schema.define(version: 20140814081047) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -138,10 +138,7 @@ ActiveRecord::Schema.define(version: 20140728134831) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
 
   create_table "messages", force: true do |t|
-    t.text     "body"
-    t.datetime "created_at"
-    t.boolean  "recipient_permanent_delete", default: false
-    t.boolean  "sender_permanent_delete",    default: false
+    t.text "body"
   end
 
   create_table "posts", force: true do |t|
@@ -171,6 +168,7 @@ ActiveRecord::Schema.define(version: 20140728134831) do
     t.string   "latitude"
     t.string   "longitude"
     t.boolean  "is_approved",             default: false
+    t.string   "redirect_url"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree

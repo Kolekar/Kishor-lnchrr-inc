@@ -11,20 +11,22 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: launcherr
+  database: launcherr_development
   pool: 5
-  username: root
-  password: root
+  host: localhost
 
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: launcherr_test
+  pool: 5
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: launcherr
+  database: launcherr_prduction
   pool: 5
-  username: root
-  password: root
   host: localhost
 #planbit_load
 #planbit3

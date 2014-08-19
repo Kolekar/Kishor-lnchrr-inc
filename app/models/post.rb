@@ -31,30 +31,26 @@
 #
 
 class Post < ActiveRecord::Base
-	 extend FriendlyId
+	extend FriendlyId
+
   friendly_id :project_name, use: :slugged
-  
-  belongs_to :user
- 
-  attr_accessible :project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills, :youtube_id, :to_the_table, :compensation_method, :location, :url, :content, :name, :tag_list,:category,:latitude,:longitude, :is_approved
- # default_scope { where(is_admin: true) } 
+  acts_as_taggable
+  geocoded_by :location
+  has_attached_file :coverimage
+  has_attached_file :logoimage
+
 
   # Google maps code
-   geocoded_by :location
-   after_validation :geocode, :if => :location_changed?
- 
- has_attached_file :coverimage 
- has_attached_file :logoimage 
+  after_validation :geocode, :if => :location_changed?
 
- validates_attachment :coverimage, content_type: { content_type: /\Aimage\/.*\Z/ }
- validates_attachment :logoimage, content_type: { content_type: /\Aimage\/.*\Z/ } 
- validates :project_name, uniqueness: true
- #validates_formatting_of :youtube_id, using: :url
-  # acts_as_votable 
-  #attr_accessible :content, :name, :tag_list
-acts_as_taggable
- 
-	extend FriendlyId
- 	 friendly_id :project_name
- 	 
+  # relationship
+  belongs_to :user
+
+  # validations
+  validates_attachment :coverimage, content_type: { content_type: /\Aimage\/.*\Z/ }
+  validates_attachment :logoimage, content_type: { content_type: /\Aimage\/.*\Z/ }
+  validates :project_name, uniqueness: true
+
+
+
 end

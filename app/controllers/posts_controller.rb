@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    
+
     if params[:search].present?
       @posts = Post.near(params[:search], 150)
     else
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     @messages = current_user.received_messages
       @users=User.all
    @users -= [current_user]
-  
+
   end
 
   def pricing
@@ -64,7 +64,7 @@ class PostsController < ApplicationController
 
     @post = Post.new(post_params)
     @post.user = current_user
-    
+
        respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -123,20 +123,19 @@ class PostsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.friendly.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills , :user_id, :youtube_id, :to_the_table, :compensation_method, :location,:url, :body, :topic,:content, :name, :tag_list,:category,:latitude,:longitude)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.friendly.find(params[:id])
+  end
 
-#search field for geocoder
-#    if params[:search].present?
-#   @locations = Location.near(params[:search], 50, :order => :distance)
-#  else
-#   @locations = Location.all
-#    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(
+      :body, :topic, :project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills,
+      :youtube_id, :to_the_table, :compensation_method, :location, :url, :content,
+      :name, :tag_list,:category,:latitude,:longitude, :is_approved, :redirect_url
+      )
+  end
+
 end

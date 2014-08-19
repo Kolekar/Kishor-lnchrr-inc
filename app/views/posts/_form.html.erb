@@ -2,8 +2,8 @@
  <div id="portfolio-singlee" class="section-innere">
           <div class="wrapper clearfix">
 
-     
-                
+
+
 
   <%= form_for @post, :html => { :class => 'form-horizontal form-model' , :multipart => true } do |f| %>
   <% if @post.errors.any? %>
@@ -17,22 +17,22 @@
       </ul>
     </div>
   <% end %>
- 
 
 
-   
+
+
           <p><b>Project Name</b> <br>
                <%= f.text_field :project_name, :class => 'text-field form-control' %><br>
-        
+
           <p><b>Quick Pitch</b>  <br>
                <%= f.text_field :quick_pitch, :maxlength => 140, placeholder: 'This is a 140 character pitch designed to entice users to view your project', :class => 'text-field form-control' %><br>
-         
+
            <p><b>Upload Cover Image</b> <br> <font size ="3px"> 1400w x 290h</p>
                <%= f.file_field :coverimage, :class => 'text-field form-control' %><br>
-       
+
            <p><b>Upload Logo</b> <font size ="3px"><br> 400 x 400 </P>
                <%= f.file_field :logoimage, :class => 'text-field form-control' %><br>
-          
+
 
           <p><b>Full Pitch</b> <br>
                <%= f.cktext_area :full_pitch,  :class => 'text-field form-control' %><br>
@@ -45,25 +45,28 @@
 
           <p><b>Video Pitch</b> <br>
                <%= f.text_field :youtube_id, placeholder: "https://www.youtube.com/watch?v=yr1GP8PTsr4",:class => 'text-field form-control' %><br>
-         
+
            <p><b>Website URL</b></p>
                 <%= f.text_field :url, :class => 'text-field form-control' %><br>
-         
+
+          <p><b>Callback URL</b></p>
+                <%= f.text_field :redirect_url, :class => 'text-field form-control' %><br>
+
           <p><b>How will you be personally involved in this project?</b> </p>
                 <%= f.text_area :to_the_table, :class => 'text-field form-control' %><br>
-         
+
            <p><b>How will you compensate your team?</b> <br>
                 <%= f.text_area :compensation_method, :class => 'text-field form-control' %><br>
-          
+
            <p><b>Where is this project located?</b></P>
                 <%= f.text_field :location, placeholder: ' eg, "New York City"', :class => 'text-field form-control' %><br>
-          
+
        <!--  INCLUDE LATER ON DOWN THE TRACK <%#= f.label :tags, :class => 'control-label col-md-2' %>
-          
+
             <%#= f.text_area :tags, :class => 'text-field form-control' %><br><br> -->
           <br>
             <%= f.submit nil, :class => 'btn btn-primary' %>
-           
+
           </div>
         </div>
       <% end %>
