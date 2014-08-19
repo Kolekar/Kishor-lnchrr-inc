@@ -97,46 +97,6 @@ ActiveRecord::Schema.define(version: 20140814081047) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "mailboxer_conversations", force: true do |t|
-    t.string   "subject",    default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "mailboxer_notifications", force: true do |t|
-    t.string   "type"
-    t.text     "body"
-    t.string   "subject",              default: ""
-    t.integer  "sender_id"
-    t.string   "sender_type"
-    t.integer  "conversation_id"
-    t.boolean  "draft",                default: false
-    t.string   "notification_code"
-    t.integer  "notified_object_id"
-    t.string   "notified_object_type"
-    t.string   "attachment"
-    t.datetime "updated_at",                           null: false
-    t.datetime "created_at",                           null: false
-    t.boolean  "global",               default: false
-    t.datetime "expires"
-  end
-
-  add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id", using: :btree
-
-  create_table "mailboxer_receipts", force: true do |t|
-    t.integer  "receiver_id"
-    t.string   "receiver_type"
-    t.integer  "notification_id",                            null: false
-    t.boolean  "is_read",                    default: false
-    t.boolean  "trashed",                    default: false
-    t.boolean  "deleted",                    default: false
-    t.string   "mailbox_type",    limit: 25
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-  end
-
-  add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
-
   create_table "messages", force: true do |t|
     t.text "body"
   end
@@ -161,8 +121,8 @@ ActiveRecord::Schema.define(version: 20140814081047) do
     t.string   "logoimage_content_type"
     t.integer  "logoimage_file_size"
     t.datetime "logoimage_updated_at"
-    t.string   "skills"
     t.string   "url"
+    t.string   "skills"
     t.string   "slug"
     t.string   "category"
     t.string   "latitude"
@@ -172,20 +132,6 @@ ActiveRecord::Schema.define(version: 20140814081047) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
-
-  create_table "receipts", force: true do |t|
-    t.integer  "recipient_id"
-    t.integer  "sender_id"
-    t.integer  "message_id"
-    t.boolean  "read",         default: false
-    t.boolean  "trash",        default: false
-    t.datetime "created_at"
-  end
-
-  add_index "receipts", ["recipient_id", "read", "message_id"], name: "by_read", using: :btree
-  add_index "receipts", ["recipient_id", "trash", "message_id"], name: "by_trashed", using: :btree
-  add_index "receipts", ["sender_id", "message_id"], name: "by_sender", using: :btree
-  add_index "receipts", ["sender_id", "recipient_id", "trash", "message_id"], name: "by_readable", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
