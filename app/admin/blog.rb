@@ -1,6 +1,8 @@
 ActiveAdmin.register Post do
   permit_params :project_name, :quick_pitch, :full_pitch, :youtube_id, :to_the_table, :compensation_method, :location, :tags
-
+  controller do
+    layout 'active_admin'
+  end
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

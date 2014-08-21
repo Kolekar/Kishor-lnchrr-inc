@@ -1,4 +1,4 @@
-class Api::Ajax::RequestChatAjaxController < Ajax::ModuleController
+class Api::Ajax::RequestChatAjaxController < Api::Ajax::ModuleController
   #
   def create
     @user=User.find(params[:id])

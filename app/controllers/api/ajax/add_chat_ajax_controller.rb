@@ -1,4 +1,4 @@
-class Api::Ajax::AddChatAjaxController < Ajax::ModuleController
+class Api::Ajax::AddChatAjaxController < Api::Ajax::ModuleController
 	def create
 		@user=User.find(params[:id])
 		current_user.send_message(@user, params[:message], params[:message])

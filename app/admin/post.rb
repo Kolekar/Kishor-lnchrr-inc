@@ -1,6 +1,8 @@
 ActiveAdmin.register Post do
   permit_params :project_name, :quick_pitch, :full_pitch, :youtube_id, :to_the_table, :compensation_method, :location, :tags
-
+controller do
+    layout 'active_admin'
+  end
 def to_param
   "#{id} #{title}".parameterize
 end
