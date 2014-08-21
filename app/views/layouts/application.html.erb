@@ -32,66 +32,20 @@
 <body>
 
 <!-- HEADER -->
+
 <%= render partial: "elements/navbar" %>
 <%= bootstrap_flash %>
-
-<<<<<<< HEAD
-			<div class="menu left-float clearfix">
-				<nav id="main-nav">
-				<!-- 	</li>
-
-					</ul> -->
-				</nav>
-				<nav id="menu-controls">
-					
-					
-				</nav>
-			</div>
-			
-			<div class="right-float" style="text-align: left">
-			<!-- Logged in Header-->
-				<% if defined?(Devise) %>
-				  <% if user_signed_in? %>
-						<nav id="main-nav">
-						  <ul>
-						  	<li>
-									<a href="#"> Welcome </a>
-									<ul class="sub-menu"> 
-										<!-- MAKE THIS A CLICK INSTEAD OF HOVER -->
-	     							<li><%= link_to "My Projects", my_project_posts_path %></li>
-							      <li><%= link_to "My Account", edit_user_registration_path %></li>
-										<% x = 7 %>
-									  <!--<li><%= link_to "Messages", inbox_posts_path %></li>-->
-										<li><%#= current_user.received_messages.count %></li>
-										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-										</li>
-									</ul>
-								</li>
-						  </ul>
-						</nav>
-					<% else %>
-						<nav id="main-nav"><ul>
-					    <ul>
-						    <li><%= link_to "Login", new_user_session_path %></li>
-							  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-						  </ul>
-	 				<% end %>
-	    	<% end %>
-		  </div>
-	  </div>
-	</header>
-            
-=======
->>>>>>> d2b6e5370c60ccd9833cd1ef29651ed325f3f83b
-					
-                      
-	<% if flash[:error] %>
+<% if flash[:error] %>
 	  <p class="error" > <%= flash[:error].html_safe %></p><br />
 	<%end%>
 	<% if flash[:alert] %>
 	  <p class="error" > <%= flash[:alert].html_safe %></p><br />
 	<%end%>
 	<%= yield %>
+
+
+                   
+	
 <!-- FOOTER -->
 
 	<footer>
@@ -162,7 +116,7 @@
 					<a href="http://instagram.com/lnchrr" target="_blank">Instagram</a>
 				</li>
 		  </ul>
-	    <font color="#434343">   © Launcherr, inc </font>
+	    <font color="#434343">   © Launcher, inc </font>
                  					<!-- END four -->
 <!-- login -->
 			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

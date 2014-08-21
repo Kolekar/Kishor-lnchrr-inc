@@ -65,11 +65,6 @@ end
 group :development, :test do
   gem 'pry'
   gem 'annotate'
-<<<<<<< HEAD
-  gem 'byebug'
-=======
-  #gem 'byebug'
->>>>>>> d2b6e5370c60ccd9833cd1ef29651ed325f3f83b
   gem 'quiet_assets'
 end
 

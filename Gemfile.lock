@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: b8e89c74788199d383963267f4735dccbf292f20
+  revision: 7317949556476c3d67b0a8a950f7ef4e33ddf709
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 6e95b66b544638178f1e9648369ec560594163ac
+  revision: 8e4a700f81c8bfc3d46951e34f5ff3c18138c89e
   specs:
     devise (3.3.0)
       bcrypt (~> 3.0)
@@ -111,9 +111,6 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.1.4)
-    byebug (3.2.0)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
     ckeditor (4.1.0)
       mime-types
       orm_adapter (~> 0.5.0)
@@ -129,11 +126,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
-<<<<<<< HEAD
-    columnize (0.8.9)
-    debugger-linecache (1.2.0)
-=======
->>>>>>> d2b6e5370c60ccd9833cd1ef29651ed325f3f83b
     delayed_job (4.0.2)
       activesupport (>= 3.0, < 4.2)
     erubis (2.7.0)
@@ -199,7 +191,7 @@ GEM
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
-    pry (0.10.0)
+    pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -289,7 +281,6 @@ DEPENDENCIES
   bootstrap-sass!
   bootstrap-sass-extras
   bundler
-  byebug
   ckeditor
   coffee-rails (~> 4.0.0)
   delayed_job

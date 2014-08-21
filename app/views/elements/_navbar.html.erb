@@ -1,42 +1,5 @@
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to "My Application", defined?(root_path) ? root_path : "#", class: "navbar-brand" %>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-    <ul class="nav navbar-nav">
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <% if defined?(Devise) %>
-        <% if user_signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-
-<<<<<<< HEAD
-=======
-<div id="page-content" class="fixed-header">
+<br><br><div id="page-content" class="fixed-header">
 	<header id="header">
 		<div class="header-inner wrapper clearfix">
 			<div id="logo" class="left-float">
@@ -46,9 +9,6 @@
 
 			<div class="menu left-float clearfix">
 				<nav id="main-nav">
-				<!-- 	</li>
-
-					</ul> -->
 				</nav>
 				<nav id="menu-controls">
 					
@@ -63,15 +23,13 @@
 						<nav id="main-nav">
 						  <ul>
 						  	<li>
-									<a href="#"> Welcome </a>
+						  		<a href="#"> Welcome </a>
 									<ul class="sub-menu"> 
 										<!-- MAKE THIS A CLICK INSTEAD OF HOVER -->
 	     							<li><%= link_to "My Projects", my_project_posts_path %></li>
 							      <li><%= link_to "My Account", edit_user_registration_path %></li>
 										<% x = 7 %>
 									  <li><%= link_to "Messages", inbox_posts_path %></li>
-										<li><%#= current_user.received_messages.count %></li>
-
 										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 										</li>
 									</ul>
@@ -79,11 +37,18 @@
 						  </ul>
 						</nav>
 					<% else %>
-						<nav id="main-nav"><ul>
-					    <ul>
-						    <li><%= link_to "Login", new_user_session_path %></li>
-							  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-						  </ul>
+
+
+			<!--Logged out Header -->	
+
+			<div class="menu right-float clearfix">
+           	<nav id="main-nav">
+            		<ul>
+                  	<li><%= link_to "Login", new_user_session_path %></li>
+                  	<li><%= link_to "Sign Up", new_user_registration_path %></li>
+					</ul>
+				</nav>
+			</div>
 	 				<% end %>
 	    	<% end %>
 		  </div>
@@ -92,4 +57,3 @@
             
 
 
->>>>>>> d2b6e5370c60ccd9833cd1ef29651ed325f3f83b
