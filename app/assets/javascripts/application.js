@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+// require jquery_ujs
 //= require jquery-ui
-//= require bootstrap
+//= require bootstrap.min.js
 //= require turbolinks
 //= jquery-1.9.1.min.js
 //= rotate-patch.js
@@ -22,5 +22,5 @@
 //= jquery.modernizr.min.js
 //= require ckeditor/init
 
-//= require_tree .
+// require_tree .
 

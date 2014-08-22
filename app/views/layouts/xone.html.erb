@@ -3,12 +3,13 @@
 <head>
   <title>xone</title>
   <%= stylesheet_link_tag    'xone', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'xone', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'js/jquery-1.9.1.min.js', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'js/jquery.modernizr.min.js', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
-
+<%= javascript_include_tag 'xone', 'data-turbolinks-track' => true %>
 </body>
 </html>

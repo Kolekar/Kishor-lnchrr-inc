@@ -12,8 +12,8 @@
 //
 
 
-//= require js/jquery-1.9.1.min.js
-//= require js/jquery.modernizr.min.js
+// require js/jquery-1.9.1.min.js
+// require js/jquery.modernizr.min.js
 //= require js/retina.js
 //= require js/jquery.easing.1.3.js
 //= require js/jquery.easing.compatibility.js

@@ -19,6 +19,18 @@ class PostsController < ApplicationController
     end
      @posts= @posts.where(:is_approved=>true)
   end
+  
+  def old
+
+    if params[:search].present?
+      @posts = Post.near(params[:search], 150)
+    else
+      @posts = Post.all
+
+    end
+     @posts= @posts.where(:is_approved=>true)
+  end
+
 
   def pending_page
       @posts = Post.where(:is_approved=>false)

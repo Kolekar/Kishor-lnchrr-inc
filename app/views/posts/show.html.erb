@@ -46,6 +46,7 @@
           </ul><br>
         </div> -->
 <br><br>
+<!-- Button trigger modal -->
 
         <!-- MAIN PITCH SECTION -->
         <section id="portfolio">
@@ -107,7 +108,7 @@
                 <div class="spacer spacer-big"></div>
 
           </div>
-          <div class="modal hide" id="myModal"><!-- note the use of "hide" class -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 50000;height:400px"><!-- note the use of "hide" class -->
   <div class="modal-header">
     <button class="close" data-dismiss="modal">×</button>
     <h3>Join <%= @post.project_name %></h3>
