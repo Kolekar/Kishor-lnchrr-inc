@@ -10,18 +10,18 @@ GIT
 
 GIT
   remote: git://github.com/collectiveidea/delayed_job_active_record.git
-  revision: c640650df5253cc9595f5c42ebfa7a30c3e8c2f3
+  revision: 8ecc29ec814df81807d3aaef785401f2f94d9ac0
   specs:
-    delayed_job_active_record (4.0.1)
+    delayed_job_active_record (4.0.2)
       activerecord (>= 3.0, < 4.2)
       delayed_job (>= 3.0, < 4.1)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 7317949556476c3d67b0a8a950f7ef4e33ddf709
+  revision: 36edd084f277f21900a768a0384196b57d2931ee
   specs:
     activeadmin (1.0.0.pre)
-      arbre (~> 1.0)
+      arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
       formtastic (~> 2.3.0.rc3)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 8e4a700f81c8bfc3d46951e34f5ff3c18138c89e
+  revision: df43642cd5e5a4ed666fc8e57a1bee46de864394
   specs:
     devise (3.3.0)
       bcrypt (~> 3.0)
@@ -101,7 +101,7 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
-    arbre (1.0.1)
+    arbre (1.0.2)
       activesupport (>= 3.0.0)
     arel (4.0.2)
     bcrypt (3.1.7)
@@ -258,7 +258,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.2)
+    turbolinks (2.2.3)
       coffee-rails
     tzinfo (0.3.41)
     uglifier (2.5.3)

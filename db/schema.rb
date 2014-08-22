@@ -98,8 +98,24 @@ ActiveRecord::Schema.define(version: 20140814081047) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "messages", force: true do |t|
-    t.text "body"
+    t.string   "topic"
+    t.text     "body"
+    t.integer  "received_messageable_id"
+    t.string   "received_messageable_type"
+    t.integer  "sent_messageable_id"
+    t.string   "sent_messageable_type"
+    t.boolean  "opened",                     default: false
+    t.boolean  "recipient_delete",           default: false
+    t.boolean  "sender_delete",              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ancestry"
+    t.boolean  "recipient_permanent_delete", default: false
+    t.boolean  "sender_permanent_delete",    default: false
   end
+
+  add_index "messages", ["ancestry"], name: "index_messages_on_ancestry", using: :btree
+  add_index "messages", ["sent_messageable_id", "received_messageable_id"], name: "acts_as_messageable_ids", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "project_name"
@@ -110,7 +126,6 @@ ActiveRecord::Schema.define(version: 20140814081047) do
     t.text     "to_the_table"
     t.text     "compensation_method"
     t.string   "location"
-    t.text     "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "coverimage_file_name"
@@ -132,6 +147,20 @@ ActiveRecord::Schema.define(version: 20140814081047) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "receipts", force: true do |t|
+    t.integer  "recipient_id"
+    t.integer  "sender_id"
+    t.integer  "message_id"
+    t.boolean  "read",         default: false
+    t.boolean  "trash",        default: false
+    t.datetime "created_at"
+  end
+
+  add_index "receipts", ["recipient_id", "read", "message_id"], name: "by_read", using: :btree
+  add_index "receipts", ["recipient_id", "trash", "message_id"], name: "by_trashed", using: :btree
+  add_index "receipts", ["sender_id", "message_id"], name: "by_sender", using: :btree
+  add_index "receipts", ["sender_id", "recipient_id", "trash", "message_id"], name: "by_readable", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -170,8 +199,10 @@ ActiveRecord::Schema.define(version: 20140814081047) do
     t.string   "uid"
     t.string   "name"
     t.string   "username"
+    t.string   "ancestry"
   end
 
+  add_index "users", ["ancestry"], name: "index_users_on_ancestry", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
