@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
 
   before_action :set_post, only: [ :edit, :update, :destroy, :vote]
-
+  layout "xone", only:[:index]
 
   # GET /posts
   # GET /posts.json
